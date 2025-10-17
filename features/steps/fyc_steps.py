@@ -1,0 +1,77 @@
+import allure
+from behave import given, when, then
+from pages.home_page import HomePage
+from pages.login_page import LoginPage
+from pages.automation_page import AutomationPage
+from utils.logger import get_logger
+
+logger = get_logger()
+
+@given("I launch the FYC application")
+@allure.step("Launching the FYC application")
+def step_launch_app(context):
+    context.home_page = HomePage(context.driver)
+    context.home_page.launch_url('https://indeedemo-fyc.watch.indee.tv/', timeout=15)
+
+@when('I sign in using PIN "{pin}"')
+@allure.step('Logging in with "{pin}"')
+def step_login(context, pin):
+    context.login_page = LoginPage(context.driver)
+    context.login_page.login(pin, timeout=15)
+
+
+@then('I navigate to "{project_name}"')
+@allure.step("Navigating to the project")
+def step_open_project(context, project_name):
+    context.automation_page = AutomationPage(context.driver)
+    context.automation_page.click_automation_project_title()
+
+@then("I switch to Details tab and wait for few seconds")
+@allure.step("Switching to Details tab")
+def step_details_tab(context):
+    context.automation_page = AutomationPage(context.driver)
+    context.automation_page.click_details_section(timeout=15)
+
+@then("I return to Videos tab")
+@allure.step("Returning to Videos tab")
+def step_videos_tab(context):
+    context.automation_page = AutomationPage(context.driver)
+    context.automation_page.click_video_section()
+
+@then("I play the video for 10 seconds and pause")
+@allure.step("Playing the video for 10 seconds")
+def step_play_video(context):
+    context.automation_page = AutomationPage(context.driver)
+    context.automation_page.play_first_video()
+    context.automation_page.pause_html5_video()
+
+@then("I resume playback using Continue Watching button")
+@allure.step("Resuming playback")
+def step_resume_video(context):
+    context.automation_page = AutomationPage(context.driver)
+    context.automation_page.play_html5_video()
+
+@then("I set video volume to 50 percent")
+@allure.step("Adjusting video volume")
+def step_volume(context):
+    context.automation_page = AutomationPage(context.driver)
+    context.automation_page.set_video_volume_to_50()
+
+@then("I change video resolution to 480p and then back to 720p")
+@allure.step("Changing video resolution")
+def step_resolution(context):
+    context.automation_page = AutomationPage(context.driver)
+    context.automation_page.change_resolution_480_to_720_via_settings()
+
+@then("I pause video and exit project")
+@allure.step("Pausing and exiting project")
+def step_exit(context):
+    context.automation_page = AutomationPage(context.driver)
+    context.automation_page.pause_html5_video()
+    context.automation_page.navigate_back()
+
+@then("I logout from the platform")
+@allure.step("Logging out from the platform")
+def step_logout(context):
+    context.automation_page = AutomationPage(context.driver)
+    context.automation_page.click_logout_button()
