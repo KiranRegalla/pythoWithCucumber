@@ -14,7 +14,7 @@ logger = get_logger()
 def step_launch_app(context):
     try:
         context.home_page = HomePage(context.driver)
-        context.home_page.launch_url('https://indeedemo-fyc.watch.indee.tv/', timeout=15)
+        context.home_page.launch_url('https://indeedemo-fyc.watch.indee.tv/login', timeout=15)
     finally:
         screenshot_path = f"screenshots/launch_app_{int(time.time())}.png"
         context.driver.save_screenshot(screenshot_path)
