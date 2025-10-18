@@ -44,9 +44,10 @@ jobs:
         run: |
           allure generate reports/allure-results -o reports/allure-report --clean
 
-      # Step 7: Upload Allure report as artifact
-      - name: Upload Allure report
-        uses: actions/upload-artifact@v4
+      # Step 7: Deploy Allure report to GitHub Pages
+      - name: Deploy Allure Report
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          name: allure-report
-          path: reports/allure-report
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./reports/allure-report
+          publish_branch: gh-pages
