@@ -21,6 +21,7 @@ def before_all(context):
 
         # Headless mode (needed for GitHub Actions)
         options.add_argument("--headless=new")  # for Chrome 109+ use --headless=new
+        options.add_argument("--window-size=1920,1080")
         options.add_argument("--no-sandbox")  # required for many CI environments
         options.add_argument("--disable-dev-shm-usage")  # avoid /dev/shm issues
         options.add_argument("--disable-gpu")  # for headless stability

@@ -34,6 +34,10 @@ class LoginPage:
             button_element = WebDriverWait(self.driver, timeout).until(
                 EC.element_to_be_clickable(self.sign_in_button)
             )
+
+            # Scroll the element into view
+            self.driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", button_element)
+
             button_element.click()
             logger.info("✅ Sign In button clicked successfully.")
             return True
