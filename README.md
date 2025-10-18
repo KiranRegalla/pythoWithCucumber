@@ -112,6 +112,8 @@ This executes all scenarios tagged as @video and generates Allure reports.
 ```bash
 behave --tags=@login
 ```
+### Please find the live reports after every remote run on git hub actions
+https://kiranregalla.github.io/pythoWithCucumber/ 
 
 ### Manually View Allure Report
 ```bash
