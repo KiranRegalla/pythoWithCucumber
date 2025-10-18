@@ -82,15 +82,16 @@ FYC_Automation/
 
 ## 🧠 Framework Highlights
 
+## 🧠 Framework Highlights
+
 ✅ BDD Framework (Behave)  
 ✅ Page Object Model (POM)  
 ✅ Dynamic Waits with WebDriverWait  
 ✅ Error Handling & Logging  
 ✅ WebDriver Manager (no .exe needed)  
-✅ Allure Reporting with Tags
-
-✅ Run tests on GitHub Actions (cloud/CI)
-✅ View latest Allure report online: https://kiranregalla.github.io/pythoWithCucumber/
+✅ Allure Reporting with Tags  
+✅ Run tests on GitHub Actions (cloud/CI)  
+✅ View latest Allure report online: [https://kiranregalla.github.io/pythoWithCucumber/](https://kiranregalla.github.io/pythoWithCucumber/) 
 
 ---
 
