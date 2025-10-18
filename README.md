@@ -93,6 +93,14 @@ FYC_Automation/
 
 ## 🚀 Running Tests
 
+## On git hub actions
+
+Click on the Actions tab in the top menu.
+Select anyway of the workflow.
+Click Re-Run workflow to trigger the tests manually.
+Wait for the workflow to complete. The logs will show test execution details, including passed and failed scenarios.
+Get Allure reports as an artifact, download them from the Artifacts section to view the full report.
+
 ### Run All Tests
 ```bash
 python run_tests.py
