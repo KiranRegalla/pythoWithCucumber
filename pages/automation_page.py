@@ -47,8 +47,6 @@ class AutomationPage:
         Click 'Accept All' button first if it exists, then scroll to and click
         on 'Test automation project' title using Selenium click.
         """
-        # Click accept all first
-        self.click_accept_all_button()
 
         try:
             logger.info("Waiting for 'Test automation project' title to be clickable...")

@@ -27,6 +27,8 @@ def step_launch_app(context):
 def step_login(context, pin):
     try:
         context.login_page = LoginPage(context.driver)
+        context.automation_page = AutomationPage(context.driver)
+        context.automation_page.click_accept_all_button()
         context.login_page.login(pin, timeout=15)
     finally:
         screenshot_path = f"screenshots/login_{int(time.time())}.png"
