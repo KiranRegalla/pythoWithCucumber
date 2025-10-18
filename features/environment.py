@@ -25,6 +25,8 @@ def before_all(context):
         options.add_argument("--disable-dev-shm-usage")  # avoid /dev/shm issues
         options.add_argument("--disable-gpu")  # for headless stability
 
+        options.add_argument("--force-device-scale-factor=1")  # sets page zoom to 100%
+
         # Create a unique temporary directory for Chrome profile
         temp_profile_dir = tempfile.mkdtemp()
         options.add_argument(f"--user-data-dir={temp_profile_dir}")
@@ -36,6 +38,8 @@ def before_all(context):
         context.driver.implicitly_wait(10)
         logger.info("Browser launched successfully")
 
+        # Maximize the window explicitly
+        context.driver.maximize_window()
         # Clear all cookies
         with allure.step("Clearing all browser cookies"):
             context.driver.delete_all_cookies()
