@@ -88,6 +88,7 @@ FYC_Automation/
 ✅ Error Handling & Logging  
 ✅ WebDriver Manager (no .exe needed)  
 ✅ Allure Reporting with Tags
+
 ✅ Run tests on GitHub Actions (cloud/CI)
 ✅ View latest Allure report online: https://kiranregalla.github.io/pythoWithCucumber/
 
