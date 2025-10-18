@@ -82,8 +82,6 @@ FYC_Automation/
 
 ## 🧠 Framework Highlights
 
-## 🧠 Framework Highlights
-
 ✅ BDD Framework (Behave)  
 ✅ Page Object Model (POM)  
 ✅ Dynamic Waits with WebDriverWait  
