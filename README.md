@@ -87,7 +87,9 @@ FYC_Automation/
 ✅ Dynamic Waits with WebDriverWait  
 ✅ Error Handling & Logging  
 ✅ WebDriver Manager (no .exe needed)  
-✅ Allure Reporting with Tags  
+✅ Allure Reporting with Tags
+✅ Run tests on GitHub Actions (cloud/CI)
+✅ View latest Allure report online: https://kiranregalla.github.io/pythoWithCucumber/
 
 ---
 
@@ -101,6 +103,7 @@ Click Re-Run workflow to trigger the tests manually.
 Wait for the workflow to complete. The logs will show test execution details, including passed and failed scenarios.
 Get Allure reports as an artifact, download them from the Artifacts section to view the full report.
 
+---
 ### Run All Tests
 ```bash
 python run_tests.py
@@ -119,7 +122,7 @@ https://kiranregalla.github.io/pythoWithCucumber/
 ```bash
 allure serve reports/
 ```
-
+---
 ---
 
 ## 🏗️ Tag Usage (Feature File Example)
