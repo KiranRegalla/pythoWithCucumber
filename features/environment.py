@@ -10,6 +10,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from utils.logger import get_logger
 import os
 import time
+import tempfile
 
 logger = get_logger()
 
@@ -17,7 +18,15 @@ def before_all(context):
     try:
         options = Options()
         options.add_argument("--start-maximized")
-        context.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+
+        # Create a unique temporary directory for Chrome profile
+        temp_profile_dir = tempfile.mkdtemp()
+        options.add_argument(f"--user-data-dir={temp_profile_dir}")
+
+        context.driver = webdriver.Chrome(
+            service=Service(ChromeDriverManager().install()),
+            options=options
+        )
         context.driver.implicitly_wait(10)
         logger.info("Browser launched successfully")
 
@@ -32,7 +41,6 @@ def before_all(context):
     except Exception as e:
         logger.error(f"Failed to start browser: {e}")
         raise
-
 def accept_cookies(context, timeout=10):
     """
     Accept cookies by clicking the 'Accept All' button if it appears.
